@@ -58,7 +58,7 @@ const WelcomeScreen = () => {
                 )}
             {
                 !Loading && (
-                    <div className='w-[80%] 2xl:w-2/5 min-w-[400px] h-full p-5 flex flex-col items-center justify-start gap-4 px-10  max-w-dvw pb-10'>
+                    <div className='w-[40%] 2xl:w-2/5 min-w-[400px] h-full p-5 flex flex-col items-center justify-start max-h-full gap-4 px-10 max-w-dvw pb-10'>
                         <img className='max-w-[80%] w-full' src={mainlogo} />
                         <p className='font-[Times_New_Roman] text-2xl font-semi'>2025</p>
                         <p className='font-[Times_New_Roman] text-xl font-semi'>You're on the list</p>
