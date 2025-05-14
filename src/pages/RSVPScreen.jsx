@@ -39,7 +39,7 @@ const RSVPScreen = (props) => {
     const apikey = import.meta.env.VITE_SHEETSON_API_KEY
 
     const getCategoryById = (input) => {
-        const id = input.trim()
+        const id = input.trim().toUpperCase()
         const orgMap = {
             "JMOACCFS2025": "ORGS - JMOA",
             "CWSJCCFS2025": "ORGS - CWSJ",

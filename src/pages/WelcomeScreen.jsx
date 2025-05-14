@@ -31,7 +31,7 @@ const WelcomeScreen = () => {
 
 
         setTimeout(() => {
-            if (UserCode.length < 8 || !participants.some(participant => participant.id === UserCode.trim())) {
+            if (UserCode.length < 8 || !participants.some(participant => participant.id === UserCode.trim().toUpperCase)) {
                 alert("Invalid code. Please enter a valid code.");
                 setLoading(false)
                 return;
