@@ -173,7 +173,7 @@ const RSVPScreen = (props) => {
             window.alert('RSVP SUBMITTED')
 
             setLoading(false)
-            // navigate('/')
+            navigate('/')
         } catch (error) {
             console.log(error)
             window.alert('Submission Error')
