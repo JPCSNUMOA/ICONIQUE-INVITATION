@@ -5,7 +5,7 @@ import tapeimg from '../assets/tape-text-input.png'
 import fb from '../assets/fb-icon.png'
 import email from '../assets/ig-icon.png'
 import ig from '../assets/email-icon.png'
-import { useLocation, useNavigate, Navigate } from 'react-router-dom'
+import { useLocation, useNavigate, Navigate, Link } from 'react-router-dom'
 import Select from 'react-select'
 import { configDotenv } from 'dotenv'
 import axios from 'axios'
@@ -139,6 +139,7 @@ const RSVPScreen = (props) => {
     const options = [
         { value: 'PreShow', label: 'Pre-Show' },
         { value: 'Runway', label: 'Runway' },
+        { value: 'Runway, Preshow', label: 'Both' },
     ]
 
     const handleSubmit = async () => {
@@ -230,8 +231,8 @@ const RSVPScreen = (props) => {
                                 </div>
                                 <div className='w-full flex justify-center items-center gap-3 self-end '>
                                     <img className='h-6 w-6' src={fb} onClick={() => { window.open('https://www.facebook.com/profile.php?id=61562872356464', '_blank') }} />
-                                    <img className='h-6 w-6' src={ig} onClick={() => { window.open('https://www.facebook.com/profile.php?id=61562872356464', '_blank') }} />
-                                    <img className='h-6 w-6' src={email} onClick={() => { window.open('https://www.facebook.com/profile.php?id=61562872356464', '_blank') }} />
+                                    <img className='h-6 w-6' src={email} onClick={() => { window.open('https://www.instagram.com/numoa_coco?igsh=dnRwcjhoenZwcTM5', '_blank') }} />
+                                    <img onClick={() => { window.open('mailto:numoacoco@gmail.com', '_blank') }} className='h-6 w-6' src={ig} />
                                 </div>
 
 
