@@ -9,6 +9,7 @@ import { useLocation, useNavigate, Navigate } from 'react-router-dom'
 import Select from 'react-select'
 import { configDotenv } from 'dotenv'
 import axios from 'axios'
+import { Resend } from 'resend'
 
 
 
@@ -18,6 +19,16 @@ const RSVPScreen = (props) => {
     const location = useLocation()
     const [UserCode, setUserCode] = useState(true);
     const [Loading, setLoading] = useState();
+    const resend = new Resend(import.meta.env.VITE_RESEND_API_KEY)
+
+    const sendConfirmationEmail = async () => {
+        await resend.emails.send({
+            from: 'Gren <iconique-invitation.vercel.com>',
+            to: [`${Email}`],
+            subject: 'ICONIQUE: FASHION WEEK 2025 RSVP CONFIRMED',
+            html: `<p>Greetings${FirstName}, \n You're RSVP has been confirmed</p>`,
+        });
+    }
 
     const participants = [
         { category: "ORGS", id: "JMOACCFS2025" },
@@ -100,6 +111,7 @@ const RSVPScreen = (props) => {
 
             console.log(response)
             window.alert('RSVP SUBMITTED')
+            sendConfirmationEmail()
             setLoading(false)
             navigate('/')
         } catch (error) {
