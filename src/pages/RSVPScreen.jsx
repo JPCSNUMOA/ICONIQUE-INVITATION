@@ -9,7 +9,7 @@ import { useLocation, useNavigate, Navigate } from 'react-router-dom'
 import Select from 'react-select'
 import { configDotenv } from 'dotenv'
 import axios from 'axios'
-import { Resend } from 'resend'
+
 
 
 
@@ -19,16 +19,74 @@ const RSVPScreen = (props) => {
     const location = useLocation()
     const [UserCode, setUserCode] = useState(true);
     const [Loading, setLoading] = useState();
-    const resend = new Resend(import.meta.env.VITE_RESEND_API_KEY)
+
 
     const sendConfirmationEmail = async () => {
-        await resend.emails.send({
-            from: 'Gren <iconique-invitation.vercel.com>',
-            to: [`${Email}`],
-            subject: 'ICONIQUE: FASHION WEEK 2025 RSVP CONFIRMED',
-            html: `<p>Greetings${FirstName}, \n You're RSVP has been confirmed</p>`,
-        });
-    }
+        const apiKey = import.meta.env.VITE_BREVO_API_KEY;
+
+        const emailData = {
+            sender: {
+                name: 'NU MOA COCO',
+                email: 'numoa.coco.iconique@gmail.com', // must be verified in Brevo
+            },
+            to: [
+                {
+                    email: Email,
+                },
+            ],
+            subject: 'ICONIQUE FASHION WEEK RSVP CONFIRMATION',
+            htmlContent: `<div style="font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px;">
+                    <div style="max-width: 600px; margin: 0 auto; background-color: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                        <div style="background-color: #111111; color: white; padding: 20px; text-align: center;">
+                        <h1 style="margin: 0; font-size: 28px;">ICONIQUE: FASHION WEEK 2025</h1>
+                        <p style="margin: 0; font-size: 16px;">by NU MOA COCO</p>
+                        </div>
+                        <div style="padding: 30px;">
+                        <h2 style="color: #111111;">🎟️ RSVP Confirmed!</h2>
+                        <p>Dear ${FirstName} ${LastName},</p>
+                        <p>Thank you for confirming your attendance to <strong>ICONIQUE: FASHION WEEK 2025</strong>. We're thrilled to have you with us at this iconic celebration of creativity, style, and individuality.</p>
+
+                        <p>Expect glamour, passion, and unforgettable moments. Dress to impress — the spotlight is yours. 🌟</p>
+                         <p><strong>📍 Venue:</strong> National University – MOA Campus</p>
+                            <p><strong>🗓️ Event Schedule:</strong></p>
+                            <ul style="padding-left: 20px; color: #333; line-height: 1.6;">
+                                <li><strong>May 26:</strong> Kick-off (8AM – 5PM)</li>
+                                <li><strong>May 27:</strong> Pre-show (1PM – 7PM)</li>
+                                <li><strong>May 28:</strong> Final Rehearsals and the Runway Show (8AM – 7PM)</li>
+                                <li><strong>May 29:</strong> The Expo (9AM – 5PM)</li>
+                                <li><strong>May 30:</strong> Community Outreach (12PM – 5PM)</li>
+                            </ul>
+                        <div style="margin: 30px 0; text-align: center;">
+                            <p style="padding: 12px 24px; background-color: #111111; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">Where Every Look Sparks Brilliance</p>
+                        </div>
+
+                        <p>If you have any questions or need assistance, feel free to reply to this email.</p>
+                        <p>See you there,<br/><strong>The NU MOA COCO Team</strong></p>
+                        </div>
+                        <div style="background-color: #f1f1f1; padding: 20px; text-align: center; font-size: 12px; color: #666;">
+                        © 2025 NU MOA COCO. All rights reserved.
+                        </div>
+                    </div>
+                    </div>
+                    `,
+        };
+
+        try {
+            const response = await axios.post('https://api.brevo.com/v3/smtp/email', emailData, {
+                headers: {
+                    'api-key': apiKey,
+                    'Content-Type': 'application/json',
+                },
+            });
+
+            console.log('Success:', response.data);
+
+        } catch (error) {
+            console.error('Error:', error.response?.data || error.message);
+
+        }
+    };
+
 
     const participants = [
         { category: "ORGS", id: "JMOACCFS2025" },
@@ -110,10 +168,11 @@ const RSVPScreen = (props) => {
                 })
 
             console.log(response)
-            window.alert('RSVP SUBMITTED')
             sendConfirmationEmail()
+            window.alert('RSVP SUBMITTED')
+
             setLoading(false)
-            navigate('/')
+            // navigate('/')
         } catch (error) {
             console.log(error)
             window.alert('Submission Error')
