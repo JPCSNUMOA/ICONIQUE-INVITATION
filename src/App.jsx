@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path='/' element={<WelcomeScreen />} />
           <Route path='rsvp' element={<RSVPScreen />} />
-          <Route path='success' element={<SuccessScreen />} />
+          <Route path='details' element={<SuccessScreen />} />
         </Routes>
       </BrowserRouter>
     </>

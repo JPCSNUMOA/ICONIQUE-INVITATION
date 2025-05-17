@@ -36,38 +36,81 @@ const RSVPScreen = (props) => {
             ],
             subject: 'ICONIQUE FASHION WEEK RSVP CONFIRMATION',
             htmlContent: `<div style="font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px;">
-                    <div style="max-width: 600px; margin: 0 auto; background-color: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                        <div style="background-color: #111111; color: white; padding: 20px; text-align: center;">
-                        <h1 style="margin: 0; font-size: 28px;">ICONIQUE: FASHION WEEK 2025</h1>
-                        <p style="margin: 0; font-size: 16px;">by NU MOA COCO</p>
-                        </div>
-                        <div style="padding: 30px;">
-                        <h2 style="color: #111111;">🎟️ RSVP Confirmed!</h2>
-                        <p>Dear ${FirstName} ${LastName},</p>
-                        <p>Thank you for confirming your attendance to <strong>ICONIQUE: FASHION WEEK 2025</strong>. We're thrilled to have you with us at this iconic celebration of creativity, style, and individuality.</p>
+                            <div style="max-width: 800px; margin: 0 auto; background-color: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                <div style="background-color: #111111; color: white; padding: 20px; text-align: center;">
+                                <h1 style="margin: 0; font-size: 28px;">ICONIQUE: FASHION WEEK 2025</h1>
+                                <p style="margin: 0; font-size: 16px;">by NU MOA COCO</p>
+                                </div>
+                                <div style="padding: 30px;">
+                                <h2 style="color: #111111;">🎟️ RSVP Confirmed!</h2>
+                                <p>Dear ${FirstName} ${LastName},</p>
+                                <p>Thank you for confirming your attendance to <strong>ICONIQUE: FASHION WEEK 2025</strong>. We're thrilled to have you with us at this iconic celebration of creativity, style, and individuality.</p>
+                                <p>Expect glamour, passion, and unforgettable moments. Dress to impress — the spotlight is yours. 🌟</p>
+                                <p><strong>📍 Venue:</strong> National University – MOA Campus</p>
+                                <p><strong>🗓️ Event Schedule:</strong></p>
+                                <ul style="padding-left: 20px; color: #333; line-height: 1.6;">
+                                    <li><strong>May 26:</strong> Kick-off (8AM – 5PM)</li>
+                                    <li><strong>May 27:</strong> Pre-show (1PM – 7PM)</li>
+                                    <li><strong>May 28:</strong> Final Rehearsals and the Runway Show (8AM – 7PM)</li>
+                                    <li><strong>May 29:</strong> The Expo (9AM – 5PM)</li>
+                                    <li><strong>May 30:</strong> Community Outreach (12PM – 5PM)</li>
+                                </ul>
 
-                        <p>Expect glamour, passion, and unforgettable moments. Dress to impress — the spotlight is yours. 🌟</p>
-                         <p><strong>📍 Venue:</strong> National University – MOA Campus</p>
-                            <p><strong>🗓️ Event Schedule:</strong></p>
-                            <ul style="padding-left: 20px; color: #333; line-height: 1.6;">
-                                <li><strong>May 26:</strong> Kick-off (8AM – 5PM)</li>
-                                <li><strong>May 27:</strong> Pre-show (1PM – 7PM)</li>
-                                <li><strong>May 28:</strong> Final Rehearsals and the Runway Show (8AM – 7PM)</li>
-                                <li><strong>May 29:</strong> The Expo (9AM – 5PM)</li>
-                                <li><strong>May 30:</strong> Community Outreach (12PM – 5PM)</li>
-                            </ul>
-                        <div style="margin: 30px 0; text-align: center;">
-                            <p style="padding: 12px 24px; background-color: #111111; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">Where Every Look Sparks Brilliance</p>
-                        </div>
+                                <h3 style="margin-top: 30px; color: #111111;">📋 ICONIQUE Pre-Show Schedule</h3>
+                                <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 10px;">
+                                    <thead>
+                                    <tr style="background-color: #f1f1f1; color: #111111;">
+                                        <th style="padding: 8px; border: 1px solid #ddd;">TIME</th>
+                                        <th style="padding: 8px; border: 1px solid #ddd;">SEGMENT</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">2:00 PM - 3:00 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Registration</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">3:00 PM - 3:10 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Event VTR</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">3:10 PM - 3:15 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Acknowledgement of Visitors/Guests</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">3:15 PM - 3:20 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Dean Christine Stephanie A. Allenda<br><em>Opening Speech, Founding Adviser</em></td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">3:20 PM - 3:45 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Socialization and Photobooth<br><em>Food and Activities</em></td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">3:45 PM - 4:00 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Fashion Forum: UP and PUP Representatives</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">4:00 PM - 4:15 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Fashion Forum: COCO’s Stylist and an Icon</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">4:15 PM - 4:30 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Fashion Forum: Adviser and Industry Practitioners</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">4:30 PM - 5:00 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Socialization</td></tr>
+                                    </tbody>
+                                </table>
 
-                        <p>If you have any questions or need assistance, feel free to reply to this email.</p>
-                        <p>See you there,<br/><strong>The NU MOA COCO Team</strong></p>
-                        </div>
-                        <div style="background-color: #f1f1f1; padding: 20px; text-align: center; font-size: 12px; color: #666;">
-                        © 2025 NU MOA COCO. All rights reserved.
-                        </div>
-                    </div>
-                    </div>
+                                <h3 style="margin-top: 30px; color: #111111;">👠 ICONIQUE Runway Show Schedule</h3>
+                                <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 10px;">
+                                    <thead>
+                                    <tr style="background-color: #f1f1f1; color: #111111;">
+                                        <th style="padding: 8px; border: 1px solid #ddd;">TIME</th>
+                                        <th style="padding: 8px; border: 1px solid #ddd;">SEGMENT</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">4:00 PM - 5:30 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Registration</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">5:30 PM - 5:45 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Student/Faculty Performer</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">5:45 PM - 6:00 PM</td><td style="padding: 8px; border: 1px solid #ddd;">National Anthem and Faculty Introduction</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">6:00 PM - 6:10 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Event VTR</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">6:10 PM - 6:25 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Brand 1 on the Runway</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">6:25 PM - 6:40 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Brand 2 on the Runway</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">6:40 PM - 6:55 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Brand 3 on the Runway</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">6:55 PM - 7:00 PM</td><td style="padding: 8px; border: 1px solid #ddd;">All Icons on Stage</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">7:00 PM - 7:15 PM</td><td style="padding: 8px; border: 1px solid #ddd;">NU MOA COCO Team Introduction</td></tr>
+                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">7:15 PM - 7:30 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Socialization with Guests / Photo Opportunity</td></tr>
+                                    </tbody>
+                                </table>
+
+                                <div style="margin: 30px 0; text-align: center;">
+                                    <p style="padding: 12px 24px; background-color: #111111; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">Where Every Look Sparks Brilliance</p>
+                                </div>
+
+                                <p>See you there,<br/><strong>The NU MOA COCO Team</strong></p>
+                                </div>
+                                <div style="background-color: #f1f1f1; padding: 20px; text-align: center; font-size: 12px; color: #666;">
+                                © 2025 NU MOA COCO. All rights reserved.
+                                </div>
+                            </div>
+                            </div>
+
                     `,
         };
 
@@ -87,6 +130,9 @@ const RSVPScreen = (props) => {
         }
     };
 
+    const getSchedule = () => {
+
+    }
 
     const participants = [
         { category: "ORGS", id: "JMOACCFS2025" },
@@ -203,11 +249,12 @@ const RSVPScreen = (props) => {
                         {UserCode ? (
                             <div className='bg-[#f7f7f7] flex flex-col p-5 justify-start items-center w-dvw h-dvh overflow-y-auto overflow-x-hidden'>
                                 <div className='w-full flex justify-center md:justify-start'>
-                                    <img className='h-8 md:h-15' src={cocologo} />
+                                    <img className='h-8 md:h-10' src={cocologo} />
                                 </div>
                                 <div className='w-[40%] 2xl:w-2/5 min-w-[400px] h-full p-5 flex flex-col items-center justify-start max-h-full gap-4 px-10 max-w-dvw pb-10'>
                                     <img className='max-w-[80%] w-full' src={mainlogo} />
                                     <p className='font-[Times_New_Roman] text-2xl font-semi'>2025</p>
+                                    <button onClick={() => { navigate('/details') }} className='border-1 border-black p-1 px-6 rounded-4xl font-semibold duration-300 transition-all ease-in-out  hover:bg-black hover:text-white mb-2 mt-4'>View Event Details</button>
                                     <div className='flex flex-col w-full gap-5'>
                                         <div className='w-full'>
                                             <p className='text-start w-full ml-3 font-bold mb-2' >LAST NAME</p>
@@ -226,8 +273,11 @@ const RSVPScreen = (props) => {
                                             <Select options={options} className='border-black border-1 rounded mt-3' value={Attendance} onChange={setAttendance} placeholder="Confirm Attendance" />
                                         </div>
                                     </div>
-                                    <p className='font-sans text-xs md:text-sm text-center'>Kindly RSVP to confirm your presence. Please click the button below to reserve your place.</p>
-                                    <button onClick={handleSubmit} className='border-1 border-black p-1 px-6 rounded-4xl font-semibold mt-4'>Submit</button>
+                                    <p className='font-sans text-xs md:text-sm text-center'>Kindly RSVP to confirm your presence. Please click the submit button below to reserve your place.</p>
+
+                                    <button onClick={handleSubmit} className='border-1 border-black bg-black hover:bg-gray-500 hover:border-gray-500 duration-300 ease-in-out  text-white p-1 px-6 rounded-4xl font-semibold mb-2 mt-4'>Submit</button>
+
+
                                 </div>
                                 <div className='w-full flex justify-center items-center gap-3 self-end '>
                                     <img className='h-6 w-6' src={fb} onClick={() => { window.open('https://www.facebook.com/profile.php?id=61562872356464', '_blank') }} />
