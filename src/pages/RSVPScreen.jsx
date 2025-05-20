@@ -266,7 +266,7 @@ const RSVPScreen = (props) => {
                                         </div>
                                         <div className='w-full'>
                                             <p className='text-start w-full ml-3 font-bold mb-2'>EMAIL ADDRESS</p>
-                                            <input value={Email} onChange={(e) => { setEmail(e.target.value) }} maxLength={25} placeholder='you@email.com' className='rounded-lg border-1 border-black w-full p-2 px-3' />
+                                            <input value={Email} onChange={(e) => { setEmail(e.target.value) }} maxLength={100} placeholder='you@email.com' className='rounded-lg border-1 border-black w-full p-2 px-3' />
                                         </div>
                                         <div className='w-full'>
                                             <p className='text-start w-full ml-3 font-bold mb-2'>ATTENDANCE CONFIRMATION</p>
