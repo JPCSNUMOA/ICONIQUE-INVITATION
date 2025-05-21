@@ -81,7 +81,7 @@ const SuccessScreen = () => {
                         <div className='border-gray-300 relative flex min-w-[270px] flex-col gap-6 w-full xl:w-[30%] items-center py-5 justify-center min-h-full border-r-0 border-t-2 xl:border-t-0 xl:border-r-2'>
                             <div className='flex flex-col justify-center items-center w-full font-[Times_New_Roman]'>
                                 <p>May 26, Monday</p>
-                                <p className='font-bold italic text-center'>The ICONIQUE Fashion Week Kick-off</p>
+                                <p className='font-bold italic text-center max-w-[80%] text-wrap'>The ICONIQUE Fashion Week Kick-off</p>
                             </div>
                             <div className='flex flex-col justify-center items-center w-full font-[Times_New_Roman]'>
                                 <p>May 27, Tuesday</p>

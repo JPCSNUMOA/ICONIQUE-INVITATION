@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import mainlogo from '../assets/main-logo.png'
+import mainlogo from '../assets/revised-title.png'
 import cocologo from '../assets/coco-logo.png'
 import tapeimg from '../assets/tape-text-input.png'
 import fb from '../assets/fb-icon.png'
@@ -28,10 +28,12 @@ const RSVPScreen = (props) => {
                     "Authorization": `Bearer ${apikey}`,
                 },
                 params: {
-                    Email: email
+                    limit: 1000 // fetch enough rows to check
                 }
             });
-            if (response.data?.results && response.data.results.length > 0) {
+            const rows = response.data?.results || [];
+            const found = rows.some(row => row.Email?.toLowerCase() === email.toLowerCase());
+            if (found) {
                 window.alert('This email has already been used to RSVP.');
                 return true;
             }
@@ -281,8 +283,8 @@ const RSVPScreen = (props) => {
                                     <img className='h-8 md:h-10' src={cocologo} />
                                 </div>
                                 <div className='w-[40%] 2xl:w-2/5 min-w-[400px] h-full p-5 flex flex-col items-center justify-start max-h-full gap-4 px-10 max-w-dvw pb-10'>
-                                    <img className='max-w-[80%] w-full' src={mainlogo} />
-                                    <p className='font-[Times_New_Roman] text-2xl font-semi'>2025</p>
+                                    <img className='max-w-[90%] w-full' src={mainlogo} />
+
                                     <button onClick={() => { navigate('/details') }} className='border-1 border-black p-1 px-6 rounded-4xl font-semibold duration-300 transition-all ease-in-out  hover:bg-black hover:text-white mb-2 mt-4'>View Event Details</button>
                                     <div className='flex flex-col w-full gap-5'>
                                         <div className='w-full'>

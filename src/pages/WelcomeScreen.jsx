@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import mainlogo from '../assets/main-logo.png'
+import mainlogo from '../assets/revised-title.png'
 import cocologo from '../assets/coco-logo.png'
 import tapeimg from '../assets/tape-text-input.png'
 import fb from '../assets/fb-icon.png'
@@ -59,10 +59,10 @@ const WelcomeScreen = () => {
             {
                 !Loading && (
                     <div className='w-[40%] 2xl:w-2/5 min-w-[400px] h-full p-5 flex flex-col items-center justify-start max-h-full gap-4 px-10 max-w-dvw pb-10'>
-                        <img className='max-w-[80%] w-full' src={mainlogo} />
-                        <p className='font-[Times_New_Roman] text-2xl font-semi'>2025</p>
+                        <img className='max-w-[90%] w-full' src={mainlogo} />
+
                         <p className='font-[Times_New_Roman] text-xl font-semi'>You're on the list</p>
-                        <p className='font-sans text-xs md:text-lg text-center'>You are cordially invited to Fashion Week 2025 by COCO, an celebration of elegance, innovation, and collaboration style.</p>
+                        <p className='font-sans text-xs md:text-lg text-center'>You are cordially invited to Fashion Week 2025 by NU MOA COCO, a celebration of elegance, innovation, and collaboration style.</p>
                         <div className="h-[20%] min-w-[450px] min-h-[150px]   w-full bg-center bg-contain bg-no-repeat bg-[url('./assets/tape-text-input.png')] flex justify-center items-center">
                             <input type='text' onChange={(e) => { setUserCode(e.target.value) }} value={UserCode} maxLength={16} className=' w-5/9 text-xl xl:text-2xl font-[Time_New_Roman] text-center uppercase min-h-8' placeholder='Enter Code' />
                         </div>
