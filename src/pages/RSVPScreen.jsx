@@ -20,6 +20,28 @@ const RSVPScreen = (props) => {
     const [UserCode, setUserCode] = useState(true);
     const [Loading, setLoading] = useState();
 
+    const checkDuplicateEmail = async (email) => {
+        try {
+            const response = await axios.get(`https://api.sheetson.com/v2/sheets/Sheet1`, {
+                headers: {
+                    'X-Spreadsheet-Id': sheetID,
+                    "Authorization": `Bearer ${apikey}`,
+                },
+                params: {
+                    Email: email
+                }
+            });
+            if (response.data?.results && response.data.results.length > 0) {
+                window.alert('This email has already been used to RSVP.');
+                return true;
+            }
+            return false;
+        } catch (error) {
+            console.error('Error checking duplicate email:', error);
+            window.alert('Error checking email. Please try again.');
+            return true;
+        }
+    };
 
     const sendConfirmationEmail = async () => {
         const apiKey = import.meta.env.VITE_BREVO_API_KEY;
@@ -130,9 +152,7 @@ const RSVPScreen = (props) => {
         }
     };
 
-    const getSchedule = () => {
 
-    }
 
     const participants = [
         { category: "ORGS", id: "JMOACCFS2025" },
@@ -190,41 +210,47 @@ const RSVPScreen = (props) => {
 
     const handleSubmit = async () => {
         setLoading(true)
-        const attendance = getCategoryById(usercode)
-        const att = Attendance?.value
-        console.log(attendance)
-        if (LastName.length <= 1 || Email.length <= 1 || FirstName.length <= 1 || Attendance.length <= 1) {
-            window.alert('Invalid Inputs')
-            setLoading(false)
+        if (await checkDuplicateEmail(Email)) {
+            setLoading(false);
+            return;
         }
-        try {
-            const response = await axios.post(`https://api.sheetson.com/v2/sheets/Sheet1`, {
-                LastName,
-                FirstName,
-                Email,
-                Classification: attendance,
-                Attendance: att
+        else {
+            const attendance = getCategoryById(usercode)
+            const att = Attendance?.value
+            console.log(attendance)
+            if (LastName.length <= 1 || Email.length <= 1 || FirstName.length <= 1 || Attendance.length <= 1) {
+                window.alert('Invalid Inputs')
+                setLoading(false)
+            }
+            try {
+                const response = await axios.post(`https://api.sheetson.com/v2/sheets/Sheet1`, {
+                    LastName,
+                    FirstName,
+                    Email,
+                    Classification: attendance,
+                    Attendance: att
 
-            },
-                {
-                    headers: {
-                        'X-Spreadsheet-Id': sheetID,
-                        "Authorization": `Bearer ${apikey}`,
+                },
+                    {
+                        headers: {
+                            'X-Spreadsheet-Id': sheetID,
+                            "Authorization": `Bearer ${apikey}`,
 
-                    }
-                })
+                        }
+                    })
 
-            console.log(response)
-            sendConfirmationEmail()
-            window.alert('RSVP SUBMITTED')
+                console.log(response)
+                sendConfirmationEmail()
+                window.alert('RSVP SUBMITTED')
 
-            setLoading(false)
-            navigate('/')
-        } catch (error) {
-            console.log(error)
-            window.alert('Submission Error')
-        } finally {
-            setLoading(false)
+                setLoading(false)
+                navigate('/')
+            } catch (error) {
+                console.log(error)
+                window.alert('Submission Error')
+            } finally {
+                setLoading(false)
+            }
         }
     }
 
@@ -247,7 +273,10 @@ const RSVPScreen = (props) => {
                 ) : (
                     <>
                         {UserCode ? (
-                            <div className='bg-[#f7f7f7] flex flex-col p-5 justify-start items-center w-dvw h-dvh overflow-y-auto overflow-x-hidden'>
+                            <div className='bg-[#f7f7f7] flex flex-col px-5 pt-5 justify-start items-center w-dvw h-dvh overflow-y-auto overflow-x-hidden'>
+
+
+
                                 <div className='w-full flex justify-center md:justify-start'>
                                     <img className='h-8 md:h-10' src={cocologo} />
                                 </div>
@@ -265,25 +294,25 @@ const RSVPScreen = (props) => {
                                             <input value={FirstName} onChange={(e) => { setFirstName(e.target.value) }} maxLength={25} placeholder='e.g. John' className='rounded-lg border-1 border-black w-full p-2 px-3' />
                                         </div>
                                         <div className='w-full'>
-                                            <p className='text-start w-full ml-3 font-bold mb-2'>EMAIL ADDRESS</p>
-                                            <input value={Email} onChange={(e) => { setEmail(e.target.value) }} maxLength={100} placeholder='you@email.com' className='rounded-lg border-1 border-black w-full p-2 px-3' />
+                                            <p className='text-start w-full ml-3 font-bold mb-2'>GOOGLE EMAIL ADDRESS</p>
+                                            <input value={Email} onChange={(e) => { setEmail(e.target.value) }} maxLength={100} placeholder='you@gmail.com' className='rounded-lg border-1 border-black w-full p-2 px-3' />
                                         </div>
                                         <div className='w-full'>
                                             <p className='text-start w-full ml-3 font-bold mb-2'>ATTENDANCE CONFIRMATION</p>
                                             <Select options={options} className='border-black border-1 rounded mt-3' value={Attendance} onChange={setAttendance} placeholder="Confirm Attendance" />
                                         </div>
                                     </div>
-                                    <p className='font-sans text-xs md:text-sm text-center'>Kindly RSVP to confirm your presence. Please click the submit button below to reserve your place.</p>
+                                    <p className='font-sans text-xs md:text-sm text-center'>Kindly RSVP to confirm your presence. Please click the submit button below to reserve your seat.</p>
 
                                     <button onClick={handleSubmit} className='border-1 border-black bg-black hover:bg-gray-500 hover:border-gray-500 duration-300 ease-in-out  text-white p-1 px-6 rounded-4xl font-semibold mb-2 mt-4'>Submit</button>
 
+                                    <div className='w-full flex justify-center items-center gap-3 self-end '>
+                                        <img className='h-6 w-6' src={fb} onClick={() => { window.open('https://www.facebook.com/profile.php?id=61562872356464', '_blank') }} />
+                                        <img className='h-6 w-6' src={email} onClick={() => { window.open('https://www.instagram.com/numoa_coco?igsh=dnRwcjhoenZwcTM5', '_blank') }} />
+                                        <img onClick={() => { window.open('mailto:numoacoco@gmail.com', '_blank') }} className='h-6 w-6' src={ig} />
+                                    </div>
+                                </div>
 
-                                </div>
-                                <div className='w-full flex justify-center items-center gap-3 self-end '>
-                                    <img className='h-6 w-6' src={fb} onClick={() => { window.open('https://www.facebook.com/profile.php?id=61562872356464', '_blank') }} />
-                                    <img className='h-6 w-6' src={email} onClick={() => { window.open('https://www.instagram.com/numoa_coco?igsh=dnRwcjhoenZwcTM5', '_blank') }} />
-                                    <img onClick={() => { window.open('mailto:numoacoco@gmail.com', '_blank') }} className='h-6 w-6' src={ig} />
-                                </div>
 
 
                             </div >
