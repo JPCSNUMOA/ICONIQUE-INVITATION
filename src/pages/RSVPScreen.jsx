@@ -275,7 +275,7 @@ const RSVPScreen = (props) => {
                 ) : (
                     <>
                         {UserCode ? (
-                            <div className='bg-[#f7f7f7] flex flex-col px-5 pt-5 justify-start items-center w-dvw h-dvh overflow-y-auto overflow-x-hidden'>
+                            <div className='bg-[#f7f7f7] flex flex-col p-5 justify-start items-center w-dvw h-dvh overflow-y-auto overflow-x-hidden'>
 
 
 
