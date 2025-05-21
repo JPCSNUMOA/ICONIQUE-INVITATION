@@ -62,7 +62,7 @@ const WelcomeScreen = () => {
                         <img className='max-w-[90%] w-full' src={mainlogo} />
 
                         <p className='font-[Times_New_Roman] text-xl font-semi'>You're on the list</p>
-                        <p className='font-sans text-xs md:text-lg text-center'>You are cordially invited to Fashion Week 2025 by NU MOA COCO, a celebration of elegance, innovation, and collaboration style.</p>
+                        <p className='font-sans text-xs md:text-lg text-center'>You are cordially invited to Fashion Week 2025 by NU MOA COCO, a celebration of elegance, innovation, and collaborative style.</p>
                         <div className="h-[20%] min-w-[450px] min-h-[150px]   w-full bg-center bg-contain bg-no-repeat bg-[url('./assets/tape-text-input.png')] flex justify-center items-center">
                             <input type='text' onChange={(e) => { setUserCode(e.target.value) }} value={UserCode} maxLength={16} className=' w-5/9 text-xl xl:text-2xl font-[Time_New_Roman] text-center uppercase min-h-8' placeholder='Enter Code' />
                         </div>
