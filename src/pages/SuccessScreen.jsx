@@ -31,6 +31,9 @@ const SuccessScreen = () => {
                     <img src={maleday1} className='w-[90%] border-2 border-gray-400 mb-5' />
                     <p className="font-bold">Female Attendees</p>
                     <img src={femaleday1} className='w-[90%] border-2 border-gray-400 mb-5' />
+                    <div>
+                        <p className='indent-10 text-justify italic'>Sleeveless, tube tops, skirts, and shorts are permitted only during event hours if not exceeding 3 inches above the knee, maintaining modesty and elegance; outside of these hours, layering or cover-ups are required.</p>
+                    </div>
                 </div>
             ),
         },
@@ -45,6 +48,9 @@ const SuccessScreen = () => {
                     <img src={maleday2} className='w-[90%] border-2 border-gray-400 mb-5' />
                     <p className="font-bold">Female Attendees</p>
                     <img src={femaleday2} className='w-[90%] border-2 border-gray-400 mb-5' />
+                    <div>
+                        <p className='indent-10 text-justify italic'>Sleeveless, tube tops, skirts, and shorts are permitted only during event hours if not exceeding 3 inches above the knee, maintaining modesty and elegance; outside of these hours, layering or cover-ups are required.</p>
+                    </div>
                 </div>
             ),
         },
@@ -121,6 +127,10 @@ const SuccessScreen = () => {
                                                 <p className='font-bold italic text-center'>Target Mood</p>
                                                 <p>{slide.mood}</p>
                                             </div>
+                                            <div className='flex-grow' />
+                                            <div>
+                                                <p className='italic text-gray-600 mt-5'>click to see dress code examples</p>
+                                            </div>
                                             {/* Slide-down details */}
                                             <div
                                                 className={` transition-all duration-500 ease-in-out w-full ${activeSlides[idx] ? "max-h-40 opacity-100 mt-2" : "max-h-0 opacity-0"}`}
@@ -137,6 +147,7 @@ const SuccessScreen = () => {
                                                         aria-label={`Show details for ${dressCodeSlides[idx].title}`}
                                                     />
                                                 ))}
+
                                             </div>
                                         </div>
                                     ))}
