@@ -14,6 +14,8 @@ const WelcomeScreen = () => {
         { category: "ORGS", id: "CWSJCCFS2025" },
         { category: "ORGS", id: "JPCSCCFS2025" },
         { category: "ORGS", id: "ITSCCCFS2025" },
+        { category: "ORGS", id: "COMEXCCFS2025" },
+        { category: "ORGS", id: "NUMOASGCCFS2025" },
         { category: "MEMBERS", id: "PARAGONSCCFS2025" },
         { category: "VIPs", id: "VIPCCFS2025" },
         { category: "FACULTY", id: "FACULTYCCFS2025" },
