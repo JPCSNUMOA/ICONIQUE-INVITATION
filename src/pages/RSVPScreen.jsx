@@ -161,6 +161,8 @@ const RSVPScreen = (props) => {
         { category: "ORGS", id: "CWSJCCFS2025" },
         { category: "ORGS", id: "JPCSCCFS2025" },
         { category: "ORGS", id: "ITSCCCFS2025" },
+        { category: "ORGS", id: "COMEXCCFS2025" },
+        { category: "ORGS", id: "NUMOASGCCFS2025" },
         { category: "MEMBERS", id: "PARAGONSCCFS2025" },
         { category: "VIPs", id: "VIPCCFS2025" },
         { category: "FACULTY", id: "FACULTYCCFS2025" },
@@ -181,7 +183,9 @@ const RSVPScreen = (props) => {
             "JMOACCFS2025": "ORGS - JMOA",
             "CWSJCCFS2025": "ORGS - CWSJ",
             "JPCSCCFS2025": "ORGS - JPCS",
-            "ITSCCCFS2025": "ORGS - ITSC"
+            "ITSCCCFS2025": "ORGS - ITSC",
+            "COMEXCCFS2025": "ORGS - COMEX",
+            "NUMOASGCCFS2025": "ORGS - NUSG"
         };
 
         const participant = participants.find(p => p.id === id);
