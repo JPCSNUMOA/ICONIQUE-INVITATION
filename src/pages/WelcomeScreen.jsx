@@ -71,6 +71,7 @@ const WelcomeScreen = () => {
                             <p className='font-[Times_New_Roman] text-xl font-semi'>REGISTRATION CLOSED</p>
                         </div>
                         <p className='font-sans text-xs md:text-lg md:mt-0 text-center font-bold'>RSVP for ICONIQUE FASHION WEEK IS NOW CLOSED</p>
+                        <p className='font-sans text-xs md:text-lg text-center'>We look forward to seeing you at the Pre-show and Runway!</p>
                         <button onClick={() => { navigate('/details') }} className='border-1 border-black p-1 px-6 rounded-4xl font-semibold duration-300 transition-all ease-in-out  hover:bg-black hover:text-white mb-2 mt-4'>View Event Details</button>
 
                         <div className='flex-grow'></div>
