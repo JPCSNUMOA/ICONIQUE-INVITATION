@@ -43,6 +43,8 @@ const RSVPScreen = (props) => {
             window.alert('Error checking email. Please try again.');
             return true;
         }
+
+
     };
 
     const sendConfirmationEmail = async () => {
@@ -59,81 +61,145 @@ const RSVPScreen = (props) => {
                 },
             ],
             subject: 'ICONIQUE FASHION WEEK RSVP CONFIRMATION',
-            htmlContent: `<div style="font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px;">
-                            <div style="max-width: 800px; margin: 0 auto; background-color: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-                                <div style="background-color: #111111; color: white; padding: 20px; text-align: center;">
-                                <h1 style="margin: 0; font-size: 28px;">ICONIQUE: FASHION WEEK 2025</h1>
-                                <p style="margin: 0; font-size: 16px;">by NU MOA COCO</p>
-                                </div>
-                                <div style="padding: 30px;">
-                                <h2 style="color: #111111;">🎟️ RSVP Confirmed!</h2>
-                                <p>Dear ${FirstName} ${LastName},</p>
-                                <p>Thank you for confirming your attendance to <strong>ICONIQUE: FASHION WEEK 2025</strong>. We're thrilled to have you with us at this iconic celebration of creativity, style, and individuality.</p>
-                                <p>Expect glamour, passion, and unforgettable moments. Dress to impress — the spotlight is yours. 🌟</p>
-                                <p><strong>📍 Venue:</strong> National University – MOA Campus</p>
-                                <p><strong>🗓️ Event Schedule:</strong></p>
-                                <ul style="padding-left: 20px; color: #333; line-height: 1.6;">
-                                    <li><strong>May 26:</strong> Kick-off (8AM – 5PM)</li>
-                                    <li><strong>May 27:</strong> Pre-show (1PM – 7PM)</li>
-                                    <li><strong>May 28:</strong> Final Rehearsals and the Runway Show (8AM – 7PM)</li>
-                                    <li><strong>May 29:</strong> The Expo (9AM – 5PM)</li>
-                                    <li><strong>May 30:</strong> Community Outreach (12PM – 5PM)</li>
-                                </ul>
+            htmlContent: ` <div style="font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px;">
+        <div
+            style="max-width: 800px; margin: 0 auto; background-color: white; border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+            <div style="background-color: #111111; color: white; padding: 20px; text-align: center;">
+                <h1 style="margin: 0; font-size: 28px;">ICONIQUE: FASHION WEEK 2025</h1>
+                <p style="margin: 0; font-size: 16px;">by NU MOA COCO</p>
+            </div>
+            <div style="padding: 30px;">
+                <h2 style="color: #111111;">🎟️ RSVP Confirmed!</h2>
 
-                                <h3 style="margin-top: 30px; color: #111111;">📋 ICONIQUE Pre-Show Schedule</h3>
-                                <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 10px;">
-                                    <thead>
-                                    <tr style="background-color: #f1f1f1; color: #111111;">
-                                        <th style="padding: 8px; border: 1px solid #ddd;">TIME</th>
-                                        <th style="padding: 8px; border: 1px solid #ddd;">SEGMENT</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">2:00 PM - 3:00 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Registration</td></tr>
-                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">3:00 PM - 3:10 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Event VTR</td></tr>
-                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">3:10 PM - 3:15 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Acknowledgement of Visitors/Guests</td></tr>
-                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">3:15 PM - 3:20 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Dean Christine Stephanie A. Allenda<br><em>Opening Speech, Founding Adviser</em></td></tr>
-                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">3:20 PM - 3:45 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Socialization and Photobooth<br><em>Food and Activities</em></td></tr>
-                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">3:45 PM - 4:00 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Fashion Forum: UP and PUP Representatives</td></tr>
-                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">4:00 PM - 4:15 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Fashion Forum: COCO’s Stylist and an Icon</td></tr>
-                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">4:15 PM - 4:30 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Fashion Forum: Adviser and Industry Practitioners</td></tr>
-                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">4:30 PM - 5:00 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Socialization</td></tr>
-                                    </tbody>
-                                </table>
+                <p>Thank you for confirming your attendance to <strong>ICONIQUE: FASHION WEEK 2025</strong>. We're
+                    thrilled to have you with us at this iconic celebration of creativity, style, and individuality.</p>
+                <p>Expect glamour, passion, and unforgettable moments. Dress to impress — the spotlight is yours. 🌟</p>
+                <br />
+                <strong>Remember to check out the NU MOA COCO Facebook page and participate in the exciting giveaways!
+                    🌟 But hurry up, because the deadline for the giveaways is only up until May 27, 2025
+                    🌟</strong><br>
+                <p><strong>📍 Venue:</strong> National University – MOA Campus</p>
+                <p><strong>🗓️ Event Schedule:</strong></p>
+                <ul style="padding-left: 20px; color: #333; line-height: 1.6;">
+                    <li><strong>May 26, Monday:</strong> The ICONIQUE Fashion Week Kick-off</li>
+                    <li><strong>May 27, Tuesday:</strong> The ICONIQUE Pre-Show<br>2:00 PM - 5:00 PM</li>
+                    <li><strong>May 28, Wednesday:</strong> The ICONIQUE Runway Show<br>4:00 PM - 7:00 PM</li>
+                    <li><strong>May 29, Thursday:</strong> The ICONIQUE Expo<br>9:00 AM - 5:00 PM</li>
+                    <li><strong>May 30, Friday:</strong> Wrap Up</li>
+                </ul>
 
-                                <h3 style="margin-top: 30px; color: #111111;">👠 ICONIQUE Runway Show Schedule</h3>
-                                <table style="width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 10px;">
-                                    <thead>
-                                    <tr style="background-color: #f1f1f1; color: #111111;">
-                                        <th style="padding: 8px; border: 1px solid #ddd;">TIME</th>
-                                        <th style="padding: 8px; border: 1px solid #ddd;">SEGMENT</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">4:00 PM - 5:30 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Registration</td></tr>
-                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">5:30 PM - 5:45 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Student/Faculty Performer</td></tr>
-                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">5:45 PM - 6:00 PM</td><td style="padding: 8px; border: 1px solid #ddd;">National Anthem and Faculty Introduction</td></tr>
-                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">6:00 PM - 6:10 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Event VTR</td></tr>
-                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">6:10 PM - 6:25 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Brand 1 on the Runway</td></tr>
-                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">6:25 PM - 6:40 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Brand 2 on the Runway</td></tr>
-                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">6:40 PM - 6:55 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Brand 3 on the Runway</td></tr>
-                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">6:55 PM - 7:00 PM</td><td style="padding: 8px; border: 1px solid #ddd;">All Icons on Stage</td></tr>
-                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">7:00 PM - 7:15 PM</td><td style="padding: 8px; border: 1px solid #ddd;">NU MOA COCO Team Introduction</td></tr>
-                                    <tr><td style="padding: 8px; border: 1px solid #ddd;">7:15 PM - 7:30 PM</td><td style="padding: 8px; border: 1px solid #ddd;">Socialization with Guests / Photo Opportunity</td></tr>
-                                    </tbody>
-                                </table>
+                <div style="font-family: Arial, sans-serif; background-color: #f9f9f9; padding: 20px;">
+                    <div
+                        style="max-width: 700px; margin: 0 auto; background-color: #000000; color: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.3);">
 
-                                <div style="margin: 30px 0; text-align: center;">
-                                    <p style="padding: 12px 24px; background-color: #111111; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">Where Every Look Sparks Brilliance</p>
-                                </div>
+                        <h2
+                            style="text-align: center; font-size: 22px; letter-spacing: 1px; color: #f5d782; margin-bottom: 40px;">
+                            PROGRAM FLOW</h2>
 
-                                <p>See you there,<br/><strong>The NU MOA COCO Team</strong></p>
-                                </div>
-                                <div style="background-color: #f1f1f1; padding: 20px; text-align: center; font-size: 12px; color: #666;">
-                                © 2025 NU MOA COCO. All rights reserved.
-                                </div>
-                            </div>
-                            </div>
+                        <div style="margin-bottom: 40px;">
+                            <p style="font-size: 16px; font-weight: bold; margin: 0;">May 26, 2025 | Monday</p>
+                            <p style="margin: 0 0 10px;">The ICONIQUE Fashion Week Kick-off</p>
+                            <p style="font-style: italic; font-size: 14px;">9:00 AM – 4:00 PM</p>
+                        </div>
+
+                        <div style="margin-bottom: 40px;">
+                            <p style="font-size: 16px; font-weight: bold; margin: 0;">May 27, 2025 | Tuesday</p>
+                            <p style="margin: 0 0 10px;">The ICONIQUE Pre-Show</p>
+                            <p style="font-style: italic; font-size: 14px;">2:00 PM – 5:00 PM</p>
+                            <ol
+                                style="padding-left: 20px;color: white; margin-top: 10px; font-size: 14px; line-height: 1.6;">
+                                <li>Registration and Activity Rounds</li>
+                                <li>Event VTR</li>
+                                <li>Acknowledgement of Visitors & Guests</li>
+                                <li>Opening Speech</li>
+                                <li>Socialization and Photobooth Food and Activities</li>
+                                <li>Fashion Forum 1</li>
+                                <li>Fashion Forum 2</li>
+                                <li>Fashion Forum 3</li>
+                                <li>Socialization</li>
+                            </ol>
+                        </div>
+
+                        <div style="margin-bottom: 40px;">
+                            <p style="font-size: 16px; font-weight: bold; margin: 0;">May 28, 2025 | Wednesday</p>
+                            <p style="margin: 0 0 10px;">Final Rehearsals and The ICONIQUE Runway Show</p>
+                            <p style="font-style: italic; font-size: 14px;">4:00 PM – 7:00 PM</p>
+                            <ol style="padding-left: 20px; margin-top: 10px; font-size: 14px; line-height: 1.6;">
+                                <li>Registration</li>
+                                <li>Performer</li>
+                                <li>National Anthem and Faculty Introduction</li>
+                                <li>Event VTR</li>
+                                <li>Brand 1 on the Runway</li>
+                                <li>Brand 2 on the Runway</li>
+                                <li>Brand 3 on the Runway</li>
+                                <li>All Icons on Stage</li>
+                                <li>NU MOA COCO Team Introduction</li>
+                                <li>Socialization with Guests Photo Opportunity</li>
+                            </ol>
+                        </div>
+
+                        <div>
+                            <p style="font-size: 16px; font-weight: bold; margin: 0;">May 29, 2025 | Thursday</p>
+                            <p style="margin: 0 0 10px;">The ICONIQUE Expo</p>
+                            <p style="font-style: italic; font-size: 14px;">7:00 AM – 5:00 PM</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div
+                    style="font-family: Arial, sans-serif; background-color: #111111; color: white; padding: 40px 20px; border-radius: 10px; max-width: 700px; margin: 40px auto; box-shadow: 0 4px 16px rgba(0,0,0,0.4);">
+
+                    <h2
+                        style="color: #f5d782; font-size: 24px; margin-bottom: 25px; text-align: center; letter-spacing: 1.5px;">
+                        👗DRESS CODE
+                    </h2>
+
+                    <p style="font-size: 14px; line-height: 1.8; text-align: justify; margin-bottom: 25px;">
+                        Attendees are encouraged to express themselves through fashion while maintaining elegance and
+                        comfort. Please take note of the dress codes for each day below:
+                    </p>
+
+                    <div style="margin-bottom: 25px;">
+                        <h3 style="font-size: 18px; color: #f5d782; margin-bottom: 5px;">📅 May 27 – The ICONIQUE
+                            Pre-Show</h3>
+                        <p style="margin: 0;"><strong>Dress Code:</strong> <em>Smart Casual with Creative Flair</em></p>
+                        <p style="margin: 5px 0 0;"><strong>Target Mood:</strong> Semi-formal, stylish, and expressive,
+                            but still approachable and comfortable for movement and interaction.</p>
+                    </div>
+
+                    <div style="margin-bottom: 25px;">
+                        <h3 style="font-size: 18px; color: #f5d782; margin-bottom: 5px;">📅 May 28 – The ICONIQUE Runway
+                            Show</h3>
+                        <p style="margin: 0;"><strong>Dress Code:</strong> <em>Cocktail or Fashion Gala Attire</em></p>
+                        <p style="margin: 5px 0 0;"><strong>Target Mood:</strong> Sleek, polished, and red-carpet-ready
+                            with fashion-forward edge.</p>
+                    </div>
+
+                    <div style="border-top: 1px solid #444; padding-top: 15px;">
+                        <p style="font-size: 13px; line-height: 1.6; text-align: justify; margin: 0;">
+                            <strong>🔔 Note:</strong> Sleeveless, tube tops, skirts, and shorts are <strong>permitted
+                                only during event hours</strong> if not exceeding <strong>3 inches above the
+                                knee</strong>. Maintain modesty and elegance at all times. Outside of event hours,
+                            <strong>layering or cover-ups</strong> are required.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div style="margin: 30px 0; text-align: center;">
+                    <p
+                        style="padding: 12px 24px; background-color: #111111; color: white; text-decoration: none; border-radius: 6px; font-weight: bold;">
+                        Where Every Look Sparks Brilliance</p>
+                </div>
+
+                <p>See you there,<br /><strong>The NU MOA COCO Team</strong></p>
+            </div>
+            <div style="background-color: #f1f1f1; padding: 20px; text-align: center; font-size: 12px; color: #666;">
+                © 2025 NU MOA COCO. All rights reserved.
+            </div>
+        </div>
+    </div>
 
                     `,
         };
