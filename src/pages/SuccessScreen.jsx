@@ -162,7 +162,7 @@ const SuccessScreen = () => {
 
 
                 <div className='w-full flex justify-center items-center mt-10'>
-                    <button onClick={() => { navigate(-1) }} className='border-1 border-black p-1 px-6 rounded-4xl font-semibold duration-300 transition-all ease-in-out  hover:bg-black hover:text-white'>Go Back to RSVP</button>
+                    <button onClick={() => { navigate(-1) }} className='border-1 border-black p-1 px-6 rounded-4xl font-semibold duration-300 transition-all ease-in-out  hover:bg-black hover:text-white'>Go Back</button>
                 </div>
                 <div className='w-full flex justify-center items-center gap-3 self-end mt-10 '>
                     <img className='h-6 w-6' src={fb} onClick={() => { window.open('https://www.facebook.com/profile.php?id=61562872356464', '_blank') }} />

@@ -67,10 +67,12 @@ const WelcomeScreen = () => {
                         <p className='font-[Times_New_Roman] text-xl font-semi'>You're on the list</p>
                         <p className='font-sans text-xs md:text-lg text-center'>You are cordially invited to Fashion Week 2025 by NU MOA COCO, a celebration of elegance, innovation, and collaborative style.</p>
                         <div className="h-[20%] min-w-[450px] min-h-[150px]   w-full bg-center bg-contain bg-no-repeat bg-[url('./assets/tape-text-input.png')] flex justify-center items-center">
-                            <input type='text' onChange={(e) => { setUserCode(e.target.value) }} value={UserCode} maxLength={16} className=' w-5/9 text-xl xl:text-2xl font-[Time_New_Roman] text-center uppercase min-h-8' placeholder='Enter Code' />
+                            {/* <input type='text' onChange={(e) => { setUserCode(e.target.value) }} value={UserCode} maxLength={16} className=' w-5/9 text-xl xl:text-2xl font-[Time_New_Roman] text-center uppercase min-h-8' placeholder='Enter Code' /> */}
+                            <p className='font-[Times_New_Roman] text-xl font-semi'>REGISTRATION CLOSED</p>
                         </div>
-                        <p className='font-sans text-xs md:text-lg md:mt-10 text-center'>Kindly RSVP to confirm your presence. Please click the button below to reserve your place.</p>
-                        <button onClick={handleSubmit} className='border-1 border-black p-1 px-6 rounded-4xl font-semibold mt-4'>Get Started</button>
+                        <p className='font-sans text-xs md:text-lg md:mt-0 text-center font-bold'>RSVP for ICONIQUE FASHION WEEK IS NOW CLOSED</p>
+                        <button onClick={() => { navigate('/details') }} className='border-1 border-black p-1 px-6 rounded-4xl font-semibold duration-300 transition-all ease-in-out  hover:bg-black hover:text-white mb-2 mt-4'>View Event Details</button>
+
                         <div className='flex-grow'></div>
                         <div className='w-full flex justify-center items-center gap-3 self-end '>
                             <img className='h-6 w-6' src={fb} onClick={() => { window.open('https://www.facebook.com/profile.php?id=61562872356464', '_blank') }} />
